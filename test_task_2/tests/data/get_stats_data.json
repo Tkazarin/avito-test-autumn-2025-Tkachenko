@@ -1,0 +1,13 @@
+[
+  {
+    "name": "TC-034: Получение статистики существующего объявления",
+    "item_id": "existing_item_id",
+    "expected_status": 200,
+    "setup_required": true
+  },
+  {
+    "name": "TC-035: Получение статистики несуществующего объявления",
+    "item_id": "nonexistent_stats_id",
+    "expected_status": 400
+  }
+]

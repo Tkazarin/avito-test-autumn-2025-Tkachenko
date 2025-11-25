@@ -1,0 +1,19 @@
+[
+  {
+    "name": "TC-031: Получение объявлений существующего продавца",
+    "sellerID": 332026,
+    "expected_status": 200,
+    "setup_required": true
+  },
+  {
+    "name": "TC-032: Получение объявлений несуществующего продавца",
+    "sellerID": 332026,
+    "expected_status": 200,
+    "expected_empty": true
+  },
+  {
+    "name": "TC-033: Получение объявлений с некорректным sellerID",
+    "sellerID": "invalid_seller",
+    "expected_status": 400
+  }
+]

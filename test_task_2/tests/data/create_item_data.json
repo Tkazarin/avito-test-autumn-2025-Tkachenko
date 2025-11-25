@@ -1,0 +1,369 @@
+[
+  {
+    "name": "TC-001: Создание объявления с корректными данными",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 1000,
+      "statistics": {
+        "likes": 10,
+        "viewCount": 100,
+        "contacts": 5
+      }
+    },
+    "expected_status": 200
+  },
+  {
+    "name": "TC-002: Создание объявления с минимальной ценой",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 1,
+      "statistics": {
+        "likes": 10,
+        "viewCount": 100,
+        "contacts": 5
+      }
+    },
+    "expected_status": 200
+  },
+  {
+    "name": "TC-003: Создание объявления с максимальной ценой",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 777,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 200
+  },
+  {
+    "name": "TC-004: Создание объявления без sellerID",
+    "payload": {
+      "name": "Тестовый товар",
+      "price": 1000,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-005: Создание объявления без названия",
+    "payload": {
+      "sellerID": 332025,
+      "price": 1000,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-006: Создание объявления без цены",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-007: Создание объявления с отрицательной ценой",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": -100,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-008: Создание объявления с ценой больше максимальной",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 776,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-009: Создание объявления с нулем в цене",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 0,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-010: Создание объявления без статистики",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 775
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-011: Создание объявления без лайков",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 775,
+      "statistics": {
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-012: Создание объявления без количества просмотров",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 775,
+      "statistics": {
+        "likes": 999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-013: Создание объявления без контактов",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 775,
+      "statistics": {
+        "likes": 999,
+        "viewCount": 9999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-014: Создание объявления с отрицательным числом в количестве лайков",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": -10,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-015: Создание объявления с нулем в количестве лайков",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 0,
+        "viewCount": 9999,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-016: Создание объявления с отрицательным числом в количестве просмотров",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": -100,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-017: Создание объявления с нулем в количестве просмотров",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 0,
+        "contacts": 999
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-018: Создание объявления с отрицательным числом в контактах",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": -100
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-019: Создание объявления с нулем в контактах",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 0
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-020: Создание объявления с числом выше позволенного в лайках",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 776,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-021: Создание объявления с числом выше позволенного в просмотрах",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 776,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-022: Создание объявления с числом выше позволенного в контактах",
+    "payload": {
+      "sellerID": 332025,
+      "name": "Тестовый товар",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 776
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-023: Создание объявления с пустым названием",
+    "payload": {
+      "sellerID": 332025,
+      "name": "",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-024: Создание объявления с названием из специальных символов",
+    "payload": {
+      "sellerID": 332025,
+      "name": "!@#$%^&*()_+-=[]{}|;:,.<>?",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 200
+  },
+  {
+    "name": "TC-025: Создание объявления с названием из пробелов",
+    "payload": {
+      "sellerID": 332025,
+      "name": "   ",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  },
+  {
+    "name": "TC-026: Создание объявления айди продавца за верхней границей",
+    "payload": {
+      "sellerID": 9999999,
+      "name": "   ",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  },
+    {
+    "name": "TC-027: Создание объявления айди продавца за нижней границей",
+    "payload": {
+      "sellerID": 100,
+      "name": "   ",
+      "price": 100,
+      "statistics": {
+        "likes": 100,
+        "viewCount": 100,
+        "contacts": 100
+      }
+    },
+    "expected_status": 400
+  }
+]
